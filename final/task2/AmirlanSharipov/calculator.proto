@@ -1,0 +1,17 @@
+syntax = 'proto3';
+
+service Calculator {
+	rpc Add(Request) returns (FloatResponse);
+	rpc Substract(Request) returns (FloatResponse);
+	rpc Multiply(Request) returns (FloatResponse);
+	rpc Divide(Request) returns (FloatResponse);
+}
+
+message Request {
+	int32 a = 1;
+	int32 b = 2;
+}
+
+message FloatResponse {
+	float ans = 1;
+}

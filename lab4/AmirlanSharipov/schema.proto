@@ -1,0 +1,29 @@
+syntax = 'proto3';
+
+service Database {
+	rpc GetUsers(EmptyMessage) returns (UsersResponse);
+	rpc DeleteUser(User) returns (Response);
+	rpc PutUser(User) returns (Response);
+}
+
+message User {
+	int32 user_id = 1;
+	string user_name = 2;
+}
+
+message UserDelete {
+	int32 user_id = 1;
+}
+
+message EmptyMessage {
+
+}
+
+message Response {
+	bool status = 1;
+}
+
+message UsersResponse {
+	repeated User users = 1;
+}
+
